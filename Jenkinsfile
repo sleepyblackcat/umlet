@@ -3,14 +3,12 @@ pipeline {
 	stages {
         stage('Build') { 
             steps {
-								sh 'cd umlet-standalone'
-                sh 'mvn clean install' 
+                sh 'cd umlet-standalone && ls && mvn clean install' 
             }
         }
 				stage('Test') {
 						steps {
-								sh 'cd umlet-standalone'
-								sh 'mvn test'
+								sh 'cd umlet-standalone && ls && mvn test'
 						}
 						post {
 								always {
